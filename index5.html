@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Tailwind Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+        background: 
+          radial-gradient(circle at 25% 30%, rgba(252,161,100, 0.7), transparent 50%),
+          radial-gradient(circle at 75% 70%, rgba(180,150,255, 0.6), transparent 55%),
+          linear-gradient(120deg, #5C3D99 20%, #736CED 50%, #FCA17D 80%);
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        color: white;
+      }
+    </style>
+    
+  </head>
+  <body class="min-h-screen text-gray-100 transition-all duration-500" id="body">
+    <div class="fixed top-5 right-5 z-50">
+      <button onclick="toggleDark()" class="px-4 py-2 bg-white text-gray-800 rounded-full shadow-md font-bold dark:bg-gray-700 dark:text-white">
+        Toggle Dark Mode
+      </button>
+    </div>
+
+    <section class="text-center py-16">
+      <div class="text-2xl mb-2">✦ ✧ ✶</div>
+      <h1 class="text-5xl font-bold mb-2">Jenny Lin</h1>
+      <h2 class="text-xl text-gray-200">Creative Designer & Photographer</h2>
+    </section>
+
+    <section class="max-w-3xl mx-auto bg-white/10 backdrop-blur-md rounded-xl shadow p-8 mb-10 dark:bg-gray-800/50 dark:text-white">
+      <h2 class="text-3xl font-semibold text-center mb-4">About Me</h2>
+      <p class="text-lg text-center">Hello! I’m a passionate creative with experience in design, coding, and storytelling. I love turning ideas into visual magic, and enjoy working with colors, layouts, and gradients that tell a story.</p>
+    </section>
+
+    <section class="max-w-5xl mx-auto bg-white/10 backdrop-blur-md rounded-xl shadow p-8 mb-10 dark:bg-gray-800/50 dark:text-white">
+      <h2 class="text-3xl font-semibold text-center mb-6">Skills</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 text-center">
+        <div class="bg-white/20 dark:bg-gray-700 p-4 rounded-lg shadow hover:scale-105 transition">HTML & CSS</div>
+        <div class="bg-white/20 dark:bg-gray-700 p-4 rounded-lg shadow hover:scale-105 transition">JavaScript</div>
+        <div class="bg-white/20 dark:bg-gray-700 p-4 rounded-lg shadow hover:scale-105 transition">Figma / UIUX</div>
+        <div class="bg-white/20 dark:bg-gray-700 p-4 rounded-lg shadow hover:scale-105 transition">Adobe Illustrator</div>
+        <div class="bg-white/20 dark:bg-gray-700 p-4 rounded-lg shadow hover:scale-105 transition">Tailwind CSS</div>
+        <div class="bg-white/20 dark:bg-gray-700 p-4 rounded-lg shadow hover:scale-105 transition">Data Viz</div>
+      </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto bg-white/10 backdrop-blur-md rounded-xl shadow p-8 mb-10 dark:bg-gray-800/50 dark:text-white">
+      <h2 class="text-3xl font-semibold text-center mb-6">Projects</h2>
+      <div class="flex justify-center mb-4 space-x-2">
+        <button onclick="showTab('p1')" class="tab px-4 py-2 bg-pink-200/40 rounded dark:bg-pink-600 dark:text-white">✨ UI</button>
+        <button onclick="showTab('p2')" class="tab px-4 py-2 bg-pink-200/40 rounded dark:bg-pink-600 dark:text-white">📱 App</button>
+        <button onclick="showTab('p3')" class="tab px-4 py-2 bg-pink-200/40 rounded dark:bg-pink-600 dark:text-white">📊 Viz</button>
+      </div>
+      <div id="p1" class="tab-content grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-white/20 dark:bg-gray-700 p-4 rounded-lg shadow">Landing Page</div>
+        <div class="bg-white/20 dark:bg-gray-700 p-4 rounded-lg shadow">IG Story</div>
+      </div>
+      <div id="p2" class="tab-content hidden grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-white/20 dark:bg-gray-700 p-4 rounded-lg shadow">To-Do App</div>
+        <div class="bg-white/20 dark:bg-gray-700 p-4 rounded-lg shadow">Weather App</div>
+      </div>
+      <div id="p3" class="tab-content hidden grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-white/20 dark:bg-gray-700 p-4 rounded-lg shadow">ChartJS Demo</div>
+        <div class="bg-white/20 dark:bg-gray-700 p-4 rounded-lg shadow">GA4 Dashboard</div>
+      </div>
+    </section>
+
+    <section class="max-w-3xl mx-auto bg-white/10 backdrop-blur-md rounded-xl shadow p-8 mb-10 text-center dark:bg-gray-800/50 dark:text-white">
+      <h2 class="text-3xl font-semibold mb-4">Contact</h2>
+      <p>📧 yourmail@example.com</p>
+      <p>🌐 LinkedIn / GitHub / Behance</p>
+    </section>
+
+    <footer class="text-center text-sm py-6 text-white/80">© 2025 Your Name. All rights reserved.</footer>
+
+    <script>
+      function toggleDark() {
+        document.getElementById('body').classList.toggle('dark');
+        document.documentElement.classList.toggle('dark');
+      }
+
+      function showTab(id) {
+        document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
+        document.getElementById(id).classList.remove('hidden');
+      }
+    </script>
+  </body>
+</html>
